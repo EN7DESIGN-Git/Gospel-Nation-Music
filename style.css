@@ -1,0 +1,421 @@
+/* Reset */
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: BigShouldersText ;
+}
+body{
+  background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
+}
+
+/* font family */
+@font-face {
+  font-family: "BigShouldersText";
+  src: url("./Fonts/Big_Shoulders_Text/BigShouldersText-VariableFont_wght.ttf")
+  format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MeowScript";
+  src: url("./Fonts/Meow_Script/MeowScript-Regular.ttf")
+  format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Supprimer l'outline pour les clics seulement */
+button, a, input {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
+button:focus, a:focus, input:focus {
+  outline: none;
+  -webkit-focus-ring-color: transparent;
+}
+
+
+/* variable */
+:root{
+  --Primary: #CC9346;
+  --Black: #1C1C1C;
+  --Light: #F2F2F2;
+}
+
+
+/* Style pour le message d'avertissement */
+#desktop-warning {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: var(--Black);
+  color: var(--Light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2000; /* S'assurer que c'est au-dessus de tout le reste */
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+
+  @media (width <= 1025px){
+    display: none;
+  }
+}
+
+/* Style pour la page de chargement */
+#loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Black); /* Couleur de fond */
+  z-index: 1000;
+  transition: height 1s ease-in-out; /* Transition de la hauteur */
+}
+
+/* Style pour réduire progressivement la hauteur à 0 */
+#loading-screen.hide {
+  height: 0;
+  overflow: hidden; /* Masquer le contenu lorsque la hauteur se réduit */
+}
+
+/* Style pour le logo */
+#logo {
+  width: 125px;
+  margin-bottom: 20px;
+}
+
+/* Style pour l'animation */
+#lottie-animation {
+  width: 74px;
+  height: 74px;
+}
+
+/* --------------------------------------------------
+Home page */
+
+#main-content{
+  /* background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%); */
+  width: 100%;
+  /* height: 100dvh; */
+  position: relative;
+  overflow: clip;
+}
+
+/* Applique l'image de grain sur toute la page */
+#grainOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Permet de cliquer sur les éléments en dessous */
+  background-image: url('./images/Noise.png');
+  background-size: contain; /* Ajuste la taille pour couvrir toute la page */
+  z-index: 910; /* Assure que l'image est au-dessus des autres éléments */
+
+  @media(width >= 1026px) {
+      display: none;
+  }
+}
+
+/* NavBar */
+.NavBar {
+  width: 316px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  
+  background-image: url(./images/NavbarBG.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: fixed;
+  bottom: 0px;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  z-index: 899;
+
+  /* Text menu */
+  & p{
+      color: var(--Light, #F2F2F2);
+      text-align: center;
+      font-family: "BigShouldersText";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.4px;
+    }
+
+  /* Link */
+  & a {
+    text-decoration: none;
+  }
+
+  /* les boutons */
+  & .Btn-Lyrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 53px;
+    height: 58px;
+    border-radius: 100%;
+    background-color: var(--Primary);
+    padding-left: 7px;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 18px;
+    margin: 0px auto;
+  }
+
+  & .Btn-SideGrp {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+
+    & .Btn-Home,
+    .Btn-Annonce {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 10px 20px;
+      scale: 1;
+    }
+
+    & .Btn-Home {
+      margin-left: 10px;
+    }
+
+    & .Btn-Annonce {
+      margin-right: 10px;
+    }
+  }
+
+  /* Tablette */
+  @media (width >= 500px){
+    scale: 1.2;
+    bottom: 20px;
+  }
+}
+
+/* Header */
+.Header{
+  width: 100%;
+  height: 216px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background: linear-gradient(180deg, #1C1C1C 1.56%, rgba(28, 28, 28, 0.82) 34.54%, rgba(28, 28, 28, 0.00) 82.57%);
+  padding-top: 20px;
+  z-index: 900;
+
+  .Header-Logo {
+    width: 76px;
+  }
+
+  /* Tablette */
+  @media( width >= 500px){
+    scale: 1.2;
+    padding-top: 48px;
+  }
+}
+
+/* Hero Section */
+.Hero-Section{
+  background-image: url(./images/Bg-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100vw;
+  height: 432px;
+  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+  /* Les titres */
+  .Title-Grp{
+    margin-top: 289px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+    .Title_P1{
+      font-family: MeowScript ;
+      font-size: 2.625rem;
+      color: var(--Primary);
+    }
+    .Title_P2{
+      font-size: 1.375rem;
+      font-weight: 300;
+      text-align: center;
+      line-height: 22px;
+      width: 162px;
+      color: var(--Light);
+      margin-top: -8px;
+      margin-bottom: 10px;
+    }
+    .Title_P3{
+      font-size: 0.75rem;
+      color: var(--Light);
+    } 
+    
+    /* Tablette */
+    @media(width >= 500px) {
+      scale: 1.8;
+      margin-top: 454px;
+    }
+
+    /* landscape*/
+    @media (orientation:landscape) and (width >= 1000px){
+      margin-top: 364px;
+    }
+  }
+
+  /* Tablette */
+  @media(width >= 500px) {
+    height: 710px;
+  }
+}
+
+/* Card-Section  */
+.Card-Section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  gap: 32px;
+
+    & h1{
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+  /* Tablette */
+  @media(width >=500px) {
+    scale: 1.4;
+    margin-top: 34px;
+  }
+
+  /* landscape*/
+  @media (orientation:landscape) and (width >= 1000px){
+    margin-top: -52px;
+  }
+}
+
+/* Groupe des cards */
+.Card-Grp{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 10px; /* Espacement entre les cartes */
+  padding: 0px 20px;
+  
+  /* Pour les écrans plus petit que 360px */
+  @media (width <= 324px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* La card */
+  & .Card{
+    width: 98px;
+    height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12.069px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    
+    background-image: url(./images/Card-Circle.svg), linear-gradient(180deg, rgba(242, 242, 242, 0.09) 0%, rgba(140, 140, 140, 0.09) 100%);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+    transition: transform 0.2s ease-in-out;
+
+    & h2{
+      font-size: 0.8rem;
+      color: var(--Light);
+      text-align: center;
+      letter-spacing: 0.4px;
+    }
+  }
+  & .Secondary{
+    background-image: url(./images/Card-Circle-secondary.svg), linear-gradient(180deg, rgba(242, 242, 242, 0.09) 0%, rgba(140, 140, 140, 0.09) 100%);
+  }
+
+  & .Card.scaled {
+    transform: scale(0.9); /* Réduction de la taille */
+  }
+}
+
+/* ------------------------------------------ */
+
+/* Top6 Section */
+.Top6-Section{  
+  & h1{
+    color: var(--Primary);
+  }
+}
+
+/* Recente Section */
+.Recente-Section{
+  margin-top: 54px;
+
+  & h1{
+    color: var(--Light);
+  }
+
+  /* Tablette */
+  @media(width >= 500px) {
+    margin-top: 188px;
+  }
+}
+
+/* Copyright */
+.Copyright{
+  font-size: 0.75rem;
+  color: var(--Light);
+  opacity: 48%;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  & Span{
+    font-size: 1.1rem;
+  }
+
+  /* Tablette */
+  @media(width >= 500px) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+/* ----------------------------------------------
