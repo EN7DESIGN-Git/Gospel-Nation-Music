@@ -220,7 +220,7 @@ Home page */
   justify-content: center;
   position: fixed;
   background: linear-gradient(180deg, #1C1C1C 1.56%, rgba(28, 28, 28, 0.82) 34.54%, rgba(28, 28, 28, 0) 82.57%);
-  padding-top: 20px;
+  padding-top: 56px;
   z-index: 900;
   /* Tablette */
 }
@@ -241,8 +241,8 @@ Home page */
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100vw;
-  height: 432px;
-  padding-top: 20px;
+  height: 528px;
+  padding-top: 36px;
   flex-direction: column;
   align-items: center;
   position: relative;
