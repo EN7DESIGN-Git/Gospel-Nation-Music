@@ -114,10 +114,20 @@ Home page */
 #main-content {
   display: block;
   width: 100%;
-  height: auto;
-  position: relative;
+  height: 100dvh;
+  position: absolute;
   overflow: clip;
+  transform-origin: bottom;
+  transition: height 0.4s ease-in-out;
+  bottom: 0;
+  background-color: var(--Black);
   z-index: 1;
+}
+
+.mainHide {
+  display: block;
+  height: 100dvh;
+  z-index: 200;
 }
 
 /* Applique l'image de grain sur toute la page */
@@ -410,33 +420,40 @@ Home page */
 }
 
 .CantiqueList-Section {
-  display: flex;
+  display: block;
   background-color: #CC9346;
   width: 100%;
   height: 0dvh;
+  position: absolute;
   bottom: 0;
-  position: fixed;
   overflow: hidden;
   transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
   transition: height 0.4s ease-in-out; /* Animation de la hauteur */
+  z-index: 200;
 }
 
 /* Classe pour cacher la section Cantique avec une animation */
-#CantiqueListhide {
+.CantiqueListhide {
+  display: block;
   height: 100dvh;
   padding-top: 50px;
-  z-index: 100;
+  z-index: 300;
 }
 
 .Annonce-Section {
   display: flex;
   background-color: #46a2cc;
-  width: 0%;
+  width: 100%;
   height: 100dvh;
   bottom: 0;
   position: fixed;
-  z-index: 5;
   overflow: hidden;
-  transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
-  transition: height 0.4s ease-in-out; /* Animation de la hauteur */
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out; /* Animation de la hauteur */
+  z-index: 200;
+}
+
+.AnnonceHide {
+  transform: translateX(0);
+  z-index: 300;
 }/*# sourceMappingURL=style.css.map */

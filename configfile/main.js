@@ -41,19 +41,51 @@ $(document).ready(function(){
 //Transition des sections
 //-------------------------
 //Pour Cantique List Section
-$(document).ready(function () {
-  $(".Btn-Lyrics").click(function (e) {
-    e.preventDefault(); // Empêche l'action par défaut du bouton
-
-    // Ajoute l'ID #CantiqueListhide pour déclencher l'animation
-    $(".CantiqueList-Section").attr("id", "CantiqueListhide");
-
-    // Attends la fin de l'animation avant de masquer #main-content
-    setTimeout(function () {
-      $("#main-content").css("display", "none");
-    }, 800); // Correspond au temps de l'animation CSS (800ms)
-  });
+$(".Btn-Lyrics").click(function(){
+  $(".CantiqueList-Section").toggleClass("CantiqueListhide");
+  $(".CantiqueList-Section").css("z-index", "500");
+  
+  // Reset z-index Autres sections
+  $(".Annonce-Section").css("z-index", "200");
+  $("#main-content").css("z-index", "200");
+  
+   // Attends la fin de l'animation avant de masquer #main-content
+   setTimeout(function () {
+    $(".Annonce-Section").removeClass("AnnonceHide");
+    $("#main-content").removeClass("mainHide");
+  }, 800); // Correspond au temps de l'animation CSS (800ms)
 });
 
+// ........................
+// Pour Annonce Section
+$(".Btn-Annonce").click(function(){
+  $(".Annonce-Section").toggleClass("AnnonceHide");
+  $(".Annonce-Section").css("z-index", "500");
 
+  // Reset z-index Autres sections
+  $(".CantiqueList-Section").css("z-index", "200");
+  $("#main-content").css("z-index", "200");
 
+  // Attends la fin de l'animation avant de masquer #main-content
+    setTimeout(function () {
+      $(".CantiqueList-Section").removeClass("CantiqueListhide");
+      $("#main-content").removeClass("mainHide");
+    }, 800); // Correspond au temps de l'animation CSS (800ms)
+});
+
+// ........................
+// Pour Home Section
+$(".Btn-Home").click(function(){
+  $("#main-content").toggleClass("mainHide");
+  $("#main-content").css("z-index", "500");
+
+  // Reset z-index Autres sections
+  $(".CantiqueList-Section").css("z-index", "200");
+  $(".Annonce-Section").css("z-index", "200");
+
+  // Attends la fin de l'animation avant de masquer #main-content
+  setTimeout(function () {
+    $(".CantiqueList-Section").removeClass("CantiqueListhide");
+    $(".Annonce-Section").removeClass("AnnonceHide");
+  }, 800); // Correspond au temps de l'animation CSS (800ms)
+});
