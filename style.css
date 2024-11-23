@@ -8,6 +8,7 @@
 
 body {
   background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
+  overflow: clip;
 }
 
 /* font family */
@@ -80,19 +81,20 @@ button:focus, a:focus, input:focus {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   background-color: var(--Black); /* Couleur de fond */
   z-index: 1000;
   transition: height 1s ease-in-out; /* Transition de la hauteur */
+  transform-origin: top;
 }
 
 /* Style pour réduire progressivement la hauteur à 0 */
 #loading-screen.hide {
-  height: 0;
+  height: 0dvh;
   overflow: hidden; /* Masquer le contenu lorsque la hauteur se réduit */
 }
 
@@ -111,11 +113,12 @@ button:focus, a:focus, input:focus {
 /* --------------------------------------------------
 Home page */
 #main-content {
-  /* background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%); */
+  display: block;
   width: 100%;
   height: auto;
   position: relative;
   overflow: clip;
+  z-index: 1;
 }
 
 /* Applique l'image de grain sur toute la page */
@@ -408,8 +411,33 @@ Home page */
 }
 
 .CantiqueList-Section {
+  display: flex;
   background-color: #CC9346;
   width: 100%;
+  height: 0dvh;
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
+  transition: height 0.4s ease-in-out; /* Animation de la hauteur */
+}
+
+/* Classe pour cacher la section Cantique avec une animation */
+#CantiqueListhide {
   height: 100dvh;
   padding-top: 50px;
+  z-index: 100;
+}
+
+.Annonce-Section {
+  display: flex;
+  background-color: #46a2cc;
+  width: 0%;
+  height: 100dvh;
+  bottom: 0;
+  position: fixed;
+  z-index: 5;
+  overflow: hidden;
+  transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
+  transition: height 0.4s ease-in-out; /* Animation de la hauteur */
 }/*# sourceMappingURL=style.css.map */
