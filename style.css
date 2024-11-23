@@ -64,6 +64,11 @@ button:focus, a:focus, input:focus {
   padding: 20px;
 }
 @media (width <= 1025px) {
+  #desktop-warning p {
+    display: none;
+  }
+}
+@media (width <= 1025px) {
   #desktop-warning {
     display: none;
   }
@@ -400,4 +405,26 @@ Home page */
     padding-top: 140px;
     padding-bottom: 140px;
   }
+}
+
+.body2 {
+  background-color: #CC9346;
+  width: 100%;
+  height: 100dvh;
+}
+
+/* Animation pour le slide-up */
+@keyframes slideUpOnLoad {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Applique l'animation au body */
+.slide-up-on-load {
+  animation: slideUpOnLoad 0.6s ease-out forwards;
 }/*# sourceMappingURL=style.css.map */

@@ -37,3 +37,25 @@ $(document).ready(function(){
     }, 300);
   });
 });
+
+// transition page 2
+
+$(document).ready(function () {
+  // Code pour index.html
+  if (window.location.pathname.includes("index.html")) {
+    $(".Btn-Lyrics").click(function (e) {
+      e.preventDefault(); // Empêche la redirection immédiate
+      sessionStorage.setItem("playSlideUp", "true"); // Enregistre l'état
+      window.location.href = $(this).attr("href"); // Redirige vers la page cible
+    });
+  }
+
+  // Code pour cantiqueList.html
+  if (window.location.pathname.includes("cantiqueList.html")) {
+    // Vérifie si l'animation doit être jouée
+    if (sessionStorage.getItem("playSlideUp") === "true") {
+      $("body").addClass("slide-up-on-load"); // Applique la classe pour l'animation
+      sessionStorage.removeItem("playSlideUp"); // Supprime l'indicateur
+    }
+  }
+});
