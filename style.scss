@@ -6,7 +6,6 @@
 }
 body{
   background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
-  overflow: clip;
 }
 
 
@@ -428,7 +427,7 @@ Home page */
   }
 }
 
-// Cantique List section 
+
 .CantiqueList-Section{
   display: flex;
   background-color: #CC9346;
@@ -447,7 +446,7 @@ Home page */
   z-index: 100;
 }
 
-// Annonce Section
+
 .Annonce-Section{
   display: flex;
   background-color: #46a2cc;
