@@ -92,8 +92,9 @@ $(".Btn-Annonce").click(function(){
       $(".Annonce-Section").css("position", "relative");
       $(".Annonce-Section").css("height", "auto");
 
-      $(".CantiqueList-Section").hide();
       $("#main-content").hide();
+      $("#main-content").css("display","none");
+      $(".CantiqueList-Section").hide();
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
