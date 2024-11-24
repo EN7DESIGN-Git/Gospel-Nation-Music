@@ -432,12 +432,12 @@ button:focus, a:focus, input:focus {
   font-weight: 500;
   text-align: center;
   color: var(--Primary);
-  margin-top: 70px;
+  margin-top: 22px;
 }
 
 .Search-Wrapper {
   width: 100%;
-  height: 396px;
+  height: 240px;
   background: linear-gradient(180deg, #1C1C1C 71.42%, rgba(28, 28, 28, 0.9) 87.95%, rgba(28, 28, 28, 0) 100%);
   position: fixed;
   padding-top: 170px;
@@ -490,7 +490,7 @@ button:focus, a:focus, input:focus {
   display: flex;
   gap: 36px;
   margin: 0 auto;
-  margin-top: 48px;
+  margin-top: 36px;
   justify-content: center;
 }
 .Btn-filterGrp .Btn-filter {
@@ -505,6 +505,10 @@ button:focus, a:focus, input:focus {
 }
 .Btn-filterGrp .Active {
   background-color: var(--Primary);
+}
+
+.CantiqueList-Wrapper {
+  margin-top: 220px;
 }
 
 .Zik-List_Wrapper {
