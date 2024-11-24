@@ -225,7 +225,7 @@ button:focus, a:focus, input:focus {
 /* Header */
 .Header{
   width: 100%;
-  height: 216px;
+  height: 128px;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -233,7 +233,11 @@ button:focus, a:focus, input:focus {
   padding-top: 11%;
   z-index: 900;
 
-  .Header-Logo {
+  & a{
+    height: fit-content;
+  }
+
+  & .Header-Logo {
     width: 76px;
   }
 
@@ -387,8 +391,6 @@ button:focus, a:focus, input:focus {
   }
 }
 
-/* ------------------------------------------ */
-
 /* Top6 Section */
 .Top6-Section{  
   & h1{
@@ -430,20 +432,80 @@ button:focus, a:focus, input:focus {
   }
 }
 
+
+/* -------------------------------------------------- */
 // Cnatique Liste Section
 .CantiqueList-Section{
   display: none;
-  background-color: #CC9346;
+  background-color: var(--Black);
   width: 100%;
   height: auto;
   bottom: 0;
-  transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
+  transform-origin: bottom;
   
   position: absolute;
   overflow: clip;
-  transition: height 0.4s ease-in-out; /* Animation de la hauteur */
+  transition: height 0.4s ease-in-out;
+
+  padding-top: 180px;
 }
 
+// Search bar
+.search-bar-Container {
+  display: flex;
+  align-items: center;
+  background-color: var(--Black);
+  
+  border-radius: 50px;
+  padding: 6px 16px;
+  width: 300px;
+  border: 1px solid rgba(242, 242, 242, 0.17);
+
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  // Search input
+  & .search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--Light);
+    opacity: 90%;
+    font-size: 0.875rem;
+    font-weight: 100;
+    padding: 5px;
+    letter-spacing: 0.4px;
+  
+    & .search-input::placeholder {
+      opacity: 100%;
+    }
+  }
+
+  // Search button
+  & .search-button {
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 52px;
+    scale: 1;
+  }
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------------------- */
 // Annonce Section
 .Annonce-Section{
   display: none;

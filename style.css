@@ -213,7 +213,7 @@ button:focus, a:focus, input:focus {
 /* Header */
 .Header {
   width: 100%;
-  height: 216px;
+  height: 128px;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -221,6 +221,10 @@ button:focus, a:focus, input:focus {
   padding-top: 11%;
   z-index: 900;
   /* Tablette */
+}
+.Header a {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .Header .Header-Logo {
   width: 76px;
@@ -373,7 +377,6 @@ button:focus, a:focus, input:focus {
   transform: scale(0.9); /* Réduction de la taille */
 }
 
-/* ------------------------------------------ */
 /* Top6 Section */
 .Top6-Section h1 {
   color: var(--Primary);
@@ -413,18 +416,64 @@ button:focus, a:focus, input:focus {
   }
 }
 
+/* -------------------------------------------------- */
 .CantiqueList-Section {
   display: none;
-  background-color: #CC9346;
+  background-color: var(--Black);
   width: 100%;
   height: auto;
   bottom: 0;
-  transform-origin: bottom; /* Fixer le point d'ancrage vers le bas */
+  transform-origin: bottom;
   position: absolute;
   overflow: clip;
-  transition: height 0.4s ease-in-out; /* Animation de la hauteur */
+  transition: height 0.4s ease-in-out;
+  padding-top: 180px;
 }
 
+.search-bar-Container {
+  display: flex;
+  align-items: center;
+  background-color: var(--Black);
+  border-radius: 50px;
+  padding: 6px 16px;
+  width: 300px;
+  border: 1px solid rgba(242, 242, 242, 0.17);
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.search-bar-Container .search-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--Light);
+  opacity: 90%;
+  font-size: 0.875rem;
+  font-weight: 100;
+  padding: 5px;
+  letter-spacing: 0.4px;
+}
+.search-bar-Container .search-input .search-input::-moz-placeholder {
+  opacity: 100%;
+}
+.search-bar-Container .search-input .search-input::placeholder {
+  opacity: 100%;
+}
+.search-bar-Container .search-button {
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 52px;
+  scale: 1;
+}
+
+/* -------------------------------------------------- */
 .Annonce-Section {
   display: none;
   background-color: #46a2cc;

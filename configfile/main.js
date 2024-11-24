@@ -25,6 +25,8 @@ $(document).ready(function(){
   });
 });
 
+// ------------------------------
+
 // Clik Card
 $(document).ready(function(){
   $(".Card").click(function(){
@@ -60,7 +62,7 @@ $(".Btn-Lyrics").click(function(){
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
     $(".CantiqueList-Section").css("position", "relative");
-    $(".CantiqueList-Section").css("height", "auto"); 
+    // $(".CantiqueList-Section").css("height", "auto"); 
 
     $("#main-content").hide();
     $(".Annonce-Section").hide();
@@ -124,3 +126,13 @@ $(".Btn-Home").click(function(){
   }, 700);
 });
 
+// ........................
+
+// Bouton search
+$(document).ready(function(){
+  $(".search-button").click(function(){
+    var button = $(".search-button");
+    button.animate({scale: '0.9'}, "1000");
+    button.animate({scale: '1'}, "1000");
+  });
+});
