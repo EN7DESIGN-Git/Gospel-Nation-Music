@@ -48,6 +48,8 @@ $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("display", "block"); 
   $(".CantiqueList-Section").css("position", "absolute"); 
   $(".CantiqueList-Section").css("height", "0");
+  $(".CantiqueList-Section").css("padding", "0");
+  $(".CantiqueList-Wrapper").hide();
   
   // Reset z-index Autres sections
   $(".Annonce-Section").css("z-index", "200");
@@ -56,13 +58,16 @@ $(".Btn-Lyrics").click(function(){
   // En suite animer la section 
   setTimeout(function () {
     $(".CantiqueList-Section").css("z-index", "500");
-    $(".CantiqueList-Section").css("height", "auto");
+    $(".CantiqueList-Section").css("height", "100svh");
   }, 300); // Correspond au temps de l'animation CSS
 
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
-    $(".CantiqueList-Section").css("position", "relative");
-    // $(".CantiqueList-Section").css("height", "auto"); 
+    $(".CantiqueList-Section").css("position", "");
+    $(".CantiqueList-Section").css("height", "100svh"); 
+    $(".CantiqueList-Section").css("padding", "180px 0px");
+
+    $(".CantiqueList-Wrapper").fadeIn();
 
     $("#main-content").hide();
     $(".Annonce-Section").hide();
@@ -93,7 +98,7 @@ $(".Btn-Annonce").click(function(){
       $(".Annonce-Section").css("height", "auto");
 
       $("#main-content").hide();
-      $("#main-content").css("display","none");
+      $("#main-content").css("display", "none");
       $(".CantiqueList-Section").hide();
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });

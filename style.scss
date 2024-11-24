@@ -231,6 +231,7 @@ button:focus, a:focus, input:focus {
   position: fixed;
   background: linear-gradient(180deg, #1C1C1C 1.56%, rgba(28, 28, 28, 0.82) 34.54%, rgba(28, 28, 28, 0.00) 82.57%);
   padding-top: 11%;
+  top: 0;
   z-index: 900;
 
   & a{
@@ -437,17 +438,37 @@ button:focus, a:focus, input:focus {
 // Cnatique Liste Section
 .CantiqueList-Section{
   display: none;
-  background-color: var(--Black);
+  background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
   width: 100%;
-  height: auto;
   bottom: 0;
   transform-origin: bottom;
   
-  position: absolute;
   overflow: clip;
   transition: height 0.4s ease-in-out;
 
-  padding-top: 180px;
+
+  & h2{
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--Primary);
+    margin-top: 70px;
+  }
+}
+
+// Search wrapper
+.Search-Wrapper{
+  width: 100%;
+  height: 396px;
+  background: linear-gradient(180deg, #1C1C1C 71.42%, rgba(28, 28, 28, 0.90) 87.95%, rgba(28, 28, 28, 0.00) 100%);
+  position: fixed;
+  padding-top: 170px;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
 }
 
 // Search bar
@@ -460,12 +481,6 @@ button:focus, a:focus, input:focus {
   padding: 6px 16px;
   width: 300px;
   border: 1px solid rgba(242, 242, 242, 0.17);
-
-  position: fixed;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  z-index: 1000;
 
   // Search input
   & .search-input {
@@ -498,7 +513,68 @@ button:focus, a:focus, input:focus {
   }
 }
 
+// Btn Filter Grp
+.Btn-filterGrp{
+  display: flex;
+  gap: 36px;
+  margin: 0 auto;
+  margin-top: 48px;
+  justify-content: center;
 
+  & .Btn-filter{
+    background: rgba(242, 242, 242, 0.12);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--Light);
+
+    border: none;
+    border-radius: 8px;
+    padding: 9px 20px;
+  }
+
+  & .Active{
+    background-color: var(--Primary);
+  }
+}
+
+// Zik-List_Wrapper
+.Zik-List_Wrapper{
+  width: 334px;
+  margin: 0 auto;
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  // zik Card
+  & .Zik-Card{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    width: -webkit-fill-available;
+    border-radius: 8px;
+    padding: 0px 16px;
+
+    color: var(--Light);
+
+    & .Zik-Card_Title{
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    & .Zik-Card_Auteur{
+      font-size: 0.75rem;
+      font-weight: 100;
+      letter-spacing: 0.5px;
+    }
+  }
+  & .Zik-Card-Hover{
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
 
 
 
@@ -511,7 +587,6 @@ button:focus, a:focus, input:focus {
   display: none;
   background-color: #46a2cc;
   width: 0%;
-  height: auto;
   right: 0;
   bottom: 0;
   transform-origin: right;

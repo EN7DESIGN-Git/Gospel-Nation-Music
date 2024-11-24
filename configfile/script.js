@@ -17,7 +17,7 @@ function checkScreenWidth() {
 
 // Vérifie la taille de l'écran au chargement et lors des redimensionnements
 window.addEventListener('load', checkScreenWidth);
-window.addEventListener('resize', checkScreenWidth);
+// window.addEventListener('resize', checkScreenWidth);
 
 
 // Script pour gérer la transition de chargement
