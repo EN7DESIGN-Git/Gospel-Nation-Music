@@ -56,7 +56,7 @@ $(".Btn-Lyrics").click(function(){
   // En suite animer la section 
   setTimeout(function () {
     $(".CantiqueList-Section").css("z-index", "500");
-    $(".CantiqueList-Section").css("height", "100dvh");
+    $(".CantiqueList-Section").css("height", "auto");
   }, 300); // Correspond au temps de l'animation CSS
 
   // En suite reset la position des autres section et initialiser celle-ci
