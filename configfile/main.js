@@ -50,6 +50,7 @@ $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("height", "0");
   $(".CantiqueList-Section").css("padding", "0");
   $(".CantiqueList-Wrapper").hide();
+  $(".Search-Wrapper").hide();
   
   // Reset z-index Autres sections
   $(".Annonce-Section").css("z-index", "200");
@@ -68,6 +69,7 @@ $(".Btn-Lyrics").click(function(){
     $(".CantiqueList-Section").css("padding", "180px 0px");
 
     $(".CantiqueList-Wrapper").fadeIn();
+    $(".Search-Wrapper").fadeIn();
 
     $("#main-content").hide();
     $(".Annonce-Section").hide();
