@@ -576,8 +576,10 @@ button:focus, a:focus, input:focus {
       letter-spacing: 0.5px;
     }
   }
-  & .Zik-Card-Hover{
-    background: rgba(255, 255, 255, 0.06);
+  & .Zik-Card-Click{
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: background-color 0.3s ease;
+    scale: 1.01;
   }
 }
 

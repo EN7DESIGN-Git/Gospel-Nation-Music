@@ -146,7 +146,7 @@ $(document).ready(function(){
 });
 
 // ........................
-// Recherche 
+// Pour la Recherche 
 $(document).ready(function () {
   $('.search-input').on('input', function () {
     const query = $(this).val().toLowerCase(); // Récupère la valeur saisie (en minuscule)
@@ -162,3 +162,16 @@ $(document).ready(function () {
     });
   });
 });
+
+// ........................
+// Click Zik card
+$(document).ready(function () {
+  // Écoute le clic sur les cartes
+  $(".Zik-Card").on("click", function () {
+    // Supprime la classe 'Zik-Card-Click' de toutes les cartes
+    $(".Zik-Card").removeClass("Zik-Card-Click");
+    // Ajoute la classe 'Zik-Card-Click' uniquement à la carte cliquée
+    $(this).addClass("Zik-Card-Click");
+  });
+});
+

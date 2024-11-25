@@ -539,8 +539,10 @@ button:focus, a:focus, input:focus {
   font-weight: 100;
   letter-spacing: 0.5px;
 }
-.Zik-List_Wrapper .Zik-Card-Hover {
-  background: rgba(255, 255, 255, 0.06);
+.Zik-List_Wrapper .Zik-Card-Click {
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: background-color 0.3s ease;
+  scale: 1.01;
 }
 
 /* -------------------------------------------------- */
