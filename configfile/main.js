@@ -144,3 +144,21 @@ $(document).ready(function(){
     button.animate({scale: '1'}, "1000");
   });
 });
+
+// ........................
+// Recherche 
+$(document).ready(function () {
+  $('.search-input').on('input', function () {
+    const query = $(this).val().toLowerCase(); // Récupère la valeur saisie (en minuscule)
+    $('.CantiqueList-Section .Zik-Card').each(function () {
+      const title = $(this).find('.Zik-Card_Title').text().toLowerCase(); // Récupère le texte du titre
+      const author = $(this).find('.Zik-Card_Auteur').text().toLowerCase(); // Récupère le texte de l'auteur
+      // Vérifie si le texte saisi correspond au titre ou à l'auteur
+      if (title.includes(query) || author.includes(query)) {
+        $(this).show(); // Affiche la carte si correspondance
+      } else {
+        $(this).hide(); // Cache sinon
+      }
+    });
+  });
+});
