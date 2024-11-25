@@ -531,9 +531,10 @@ button:focus, a:focus, input:focus {
     border: none;
     border-radius: 8px;
     padding: 9px 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
-  & .Active{
+  & .Btn-filter_Active{
     background-color: var(--Primary);
   }
 }

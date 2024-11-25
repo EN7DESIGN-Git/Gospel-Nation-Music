@@ -1,4 +1,44 @@
 // @ts-nocheck
+
+// code pour le chargement de la page
+// Afficher l'avertissement sur les écrans larges
+function checkScreenWidth() {
+  const $desktopWarning = $('#desktop-warning');
+  const $mainContent = $('#main-content');
+  const $loadingScreen = $('#loading-screen');
+
+  if ($(window).width() > 1025) { // Seuil pour les écrans plus grands qu'une tablette
+    $desktopWarning.css('display', 'flex');
+    $mainContent.css('display', 'none');
+    $loadingScreen.css('display', 'none');
+  } else {
+    $desktopWarning.css('display', 'none');
+    $mainContent.css('display', 'block');
+  }
+}
+// Vérifie la taille de l'écran au chargement et lors des redimensionnements
+$(window).on('load', checkScreenWidth);
+// $(window).on('resize', checkScreenWidth); // Si nécessaire
+
+// Script pour gérer la transition de chargement
+$(window).on('load', function () {
+  setTimeout(function () {
+    const $loadingScreen = $('#loading-screen');
+    const $mainContent = $('#main-content');
+
+    // Ajout de la classe pour réduire la hauteur
+    $loadingScreen.addClass('hide');
+
+    // Après l'animation de réduction, masquez complètement la div
+    setTimeout(function () {
+      $loadingScreen.css('display', 'none');
+      $mainContent.css('display', 'block');
+    }, 1000); // Correspond à la durée de transition de 1 seconde
+  }, 2000); // Temps de chargement initial (ici 2 secondes)
+});
+
+
+// ------------------------------------------
 // Boutton Lyrics
 $(document).ready(function(){
   $(".Btn-Lyrics").click(function(){
@@ -7,8 +47,7 @@ $(document).ready(function(){
     button.animate({bottom: '18px'}, "1000");
   });
 });
-
-// Bouton Home et Annonces
+// Bouton Home
 $(document).ready(function(){
   $(".Btn-Home").click(function(){
     var button = $(".Btn-Home");
@@ -16,7 +55,7 @@ $(document).ready(function(){
     button.animate({scale: '1'}, "1000");
   });
 });
-
+// Bouton Annonces
 $(document).ready(function(){
   $(".Btn-Annonce").click(function(){
     var button = $(".Btn-Annonce");
@@ -105,7 +144,6 @@ $(".Btn-Annonce").click(function(){
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
-
 // ........................
 // Pour Home Section
 $(".Btn-Home").click(function(){
@@ -135,8 +173,7 @@ $(".Btn-Home").click(function(){
 });
 
 // ........................
-
-// Bouton search
+// Click bouton search
 $(document).ready(function(){
   $(".search-button").click(function(){
     var button = $(".search-button");
@@ -175,3 +212,19 @@ $(document).ready(function () {
   });
 });
 
+// ........................
+// Click Btn filter
+$(document).ready(function () {
+  // Écoute le clic sur les cartes
+  $(".Btn-filter").on("click", function () {
+    // Supprime la classe 'Zik-Card-Click' de toutes les cartes
+    $(".Btn-filter").removeClass("Btn-filter_Active");
+    // Ajoute la classe 'Zik-Card-Click' uniquement à la carte cliquée
+    $(this).addClass("Btn-filter_Active");
+    $(this).css("scale", "1.05");
+
+    setTimeout(() => {
+      $(this).css("scale", "1");
+    }, 300);
+  });
+});
