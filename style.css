@@ -148,7 +148,6 @@ button:focus, a:focus, input:focus {
   right: 0;
   z-index: 899;
   /* Text menu */
-  /* Link */
   /* les boutons */
   /* Tablette */
 }
@@ -162,15 +161,12 @@ button:focus, a:focus, input:focus {
   line-height: normal;
   letter-spacing: 0.4px;
 }
-.NavBar a {
-  text-decoration: none;
-}
 .NavBar .Btn-Lyrics {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 53px;
+  width: 58px;
   height: 58px;
   border-radius: 100%;
   background-color: var(--Primary);
@@ -180,6 +176,7 @@ button:focus, a:focus, input:focus {
   left: 0px;
   bottom: 18px;
   margin: 0px auto;
+  border: none;
 }
 .NavBar .Btn-SideGrp {
   display: flex;
@@ -196,6 +193,8 @@ button:focus, a:focus, input:focus {
   gap: 4px;
   padding: 10px 20px;
   scale: 1;
+  background: none;
+  border: none;
 }
 .NavBar .Btn-SideGrp .Btn-Home {
   margin-left: 10px;

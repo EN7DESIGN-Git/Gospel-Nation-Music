@@ -164,11 +164,6 @@ button:focus, a:focus, input:focus {
       letter-spacing: 0.4px;
     }
 
-  /* Link */
-  & a {
-    text-decoration: none;
-  }
-
   /* les boutons */
   & .Btn-Lyrics {
     display: flex;
@@ -176,7 +171,7 @@ button:focus, a:focus, input:focus {
     justify-content: center;
     align-items: center;
 
-    width: 53px;
+    width: 58px;
     height: 58px;
     border-radius: 100%;
     background-color: var(--Primary);
@@ -186,6 +181,7 @@ button:focus, a:focus, input:focus {
     left: 0px;
     bottom: 18px;
     margin: 0px auto;
+    border: none;
   }
 
   & .Btn-SideGrp {
@@ -204,6 +200,8 @@ button:focus, a:focus, input:focus {
       gap: 4px;
       padding: 10px 20px;
       scale: 1;
+      background: none;
+      border: none;
     }
 
     & .Btn-Home {
