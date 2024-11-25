@@ -177,8 +177,8 @@ $(".Btn-Home").click(function(){
 $(document).ready(function(){
   $(".search-button").click(function(){
     var button = $(".search-button");
-    button.animate({scale: '0.9'}, "1000");
-    button.animate({scale: '1'}, "1000");
+    button.animate({scale: '1.1'}, "300");
+    button.animate({scale: '1'}, "300");
   });
 });
 
