@@ -574,6 +574,7 @@ button:focus, a:focus, input:focus {
 .video-container video {
   width: 297px;
   display: block;
+  border-radius: 8px;
 }
 .video-container .play-button,
 .video-container .pause-button {
