@@ -650,7 +650,15 @@ button:focus, a:focus, input:focus {
 /* -------------------------------------------------- */
 // Lecture page
 .Lecture-Section{
-  display: block;
+  display: none;
+  width: 0%;
+  right: 0;
+  bottom: 0;
+  transform-origin: right;
+
+  position: relative;
+  overflow: clip;
+  transition: width 0.4s ease-in-out;
 
   // Lecture-Wrapper
   & .Lecture-Wrapper {
