@@ -93,21 +93,24 @@ $(".Btn-Home").click(function(){
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
   $(".Annonce-Section").css("z-index", "200");
+  $(".Copyright").hide();
+
 
   // En suite animer la section 
   setTimeout(function () {
     $("#main-content").css("z-index", "500");
     $("#main-content").css("height", "100dvh");
-  }, 300); // Correspond au temps de l'animation CSS
-
+  }, 300);
+  
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
     $("#main-content").css("position", "relative");
     $("#main-content").css("height", ""); 
-
+    
     $(".CantiqueList-Section").hide();
     $(".Annonce-Section").hide();
-  }, 700);
+    $(".Copyright").show();
+  }, 700); // Correspond au temps de l'animation CSS
 });
 
 //Pour Cantique List Section
@@ -117,7 +120,9 @@ $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("height", "0");
   $(".CantiqueList-Section").css("padding", "0");
   $(".CantiqueList-Wrapper").hide();
+
   $(".Search-Wrapper").hide();
+  $(".Copyright").hide();
   
   // Reset z-index Autres sections
   $(".Annonce-Section").css("z-index", "200");
@@ -127,7 +132,7 @@ $(".Btn-Lyrics").click(function(){
   setTimeout(function () {
     $(".CantiqueList-Section").css("z-index", "500");
     $(".CantiqueList-Section").css("height", "100svh");
-  }, 300); // Correspond au temps de l'animation CSS
+  }, 300); 
 
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
@@ -141,7 +146,8 @@ $(".Btn-Lyrics").click(function(){
 
     $("#main-content").hide();
     $(".Annonce-Section").hide();
-  }, 700);
+    $(".Copyright").show();
+  }, 700); // Correspond au temps de l'animation CSS
 });
 
 // ........................
@@ -151,6 +157,8 @@ $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("position", "absolute");
   $(".Annonce-Section").css("width", "0%");
   $(".Annonce-Section").css("height", "100dvh");
+
+  $(".Copyright").hide();
   
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
@@ -160,9 +168,9 @@ $(".Btn-Annonce").click(function(){
   setTimeout(function () {
     $(".Annonce-Section").css("z-index", "500");
     $(".Annonce-Section").css("width", "100%");
-  }, 300); // Correspond au temps de l'animation CSS
+  }, 300);
 
-  // Attends la fin de l'animation avant de masquer #main-content
+  // En suite reset la position des autres section et initialiser celle-ci
     setTimeout(function () {
       $(".Annonce-Section").css("position", "relative");
       $(".Annonce-Section").css("height", "auto");
@@ -170,6 +178,7 @@ $(".Btn-Annonce").click(function(){
       $("#main-content").hide();
       $("#main-content").css("display", "none");
       $(".CantiqueList-Section").hide();
+      $(".Copyright").show();
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
