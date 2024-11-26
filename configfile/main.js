@@ -86,54 +86,47 @@ $(document).ready(function(){
 // Pour Home Section
 $(".Btn-Home").click(function(){
   $("#main-content").css("display", "block"); 
-  $("#main-content").css("position", "absolute"); 
-  $("#main-content").css("height", "0"); 
-
+  $("#main-content").css("position", "fixed"); 
+  $("#main-content").css("height", "0");
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
 
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
-  $(".CantiqueList-Section").css("height", "100dvh");
-
   $(".Annonce-Section").css("z-index", "200");
-  $(".Annonce-Section").css("height", "100dvh");
-
   $(".Lecture-Section").css("z-index", "200");
-  $(".Lecture-Section").css("height", "100dvh");
-
-  $(".Copyright").hide();
-
 
   // En suite animer la section 
   setTimeout(function () {
     $("#main-content").css("z-index", "600");
     $("#main-content").css("height", "100dvh");
-    $("#main-content").css("background", "linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%)");
+    $("#main-content").css("background", "#1d1d1d");
   }, 300);
   
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
     $("#main-content").css("position", "relative");
     $("#main-content").css("height", "");
-    $("#main-content").css("background", "none"); 
+    $("#main-content").css("background", "transparent"); 
     
-    $(".CantiqueList-Section").hide();
-    $(".Annonce-Section").hide();
-    $(".Lecture-Section").hide();
-    $(".Copyright").show();
+    $(".CantiqueList-Section").fadeOut();
+    $(".Annonce-Section").fadeOut();
+    $(".Lecture-Section").fadeOut();
   }, 700); // Correspond au temps de l'animation CSS
 });
 
 //Pour Cantique List Section
 $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("display", "block"); 
-  $(".CantiqueList-Section").css("position", "absolute"); 
+  $(".CantiqueList-Section").css("position", "fixed"); 
   $(".CantiqueList-Section").css("height", "0");
+  $(".CantiqueList-Section").css("padding-top", "0");
   $(".CantiqueList-Section").css("padding", "0");
-  $(".CantiqueList-Section").css("background", "linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%)"); 
+  $(".CantiqueList-Section").css("background", "#1d1d1d");
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
 
   $(".CantiqueList-Wrapper").hide();
   $(".Search-Wrapper").hide();
-  $(".Copyright").hide();
+  // $(".Copyright").hide();
   
   // Reset z-index Autres sections
   $(".Annonce-Section").css("z-index", "200");
@@ -150,8 +143,8 @@ $(".Btn-Lyrics").click(function(){
   setTimeout(function () {
     $(".CantiqueList-Section").css("position", "");
     $(".CantiqueList-Section").css("height", ""); 
-    $(".CantiqueList-Section").css("background", "none"); 
     $(".CantiqueList-Section").css("padding-top", "200px");
+    $(".CantiqueList-Section").css("background", "transparent"); 
 
     $(".CantiqueList-Wrapper").fadeIn();
     $(".Search-Wrapper").fadeIn();
@@ -159,7 +152,6 @@ $(".Btn-Lyrics").click(function(){
     $("#main-content").hide();
     $(".Annonce-Section").hide();
     $(".Lecture-Section").hide();
-    $(".Copyright").show();
   }, 700); // Correspond au temps de l'animation CSS
 });
 
@@ -170,19 +162,13 @@ $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("position", "absolute");
   $(".Annonce-Section").css("width", "0%");
   $(".Annonce-Section").css("height", "100dvh");
-  $(".Annonce-Section").css("background", "linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%)");
-
-  $(".Copyright").hide();
+  $(".Annonce-Section").css("background", "#1d1d1d");
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
   
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
-  $(".CantiqueList-Section").css("height", "100dvh");
-
   $("#main-content").css("z-index", "200");
-  $("#main-content").css("height", "100dvh");
-
   $(".Lecture-Section").css("z-index", "200");
-  $(".Lecture-Section").css("height", "100dvh");
   
   // En suite animer la section 
   setTimeout(function () {
@@ -194,13 +180,12 @@ $(".Btn-Annonce").click(function(){
     setTimeout(function () {
       $(".Annonce-Section").css("position", "relative");
       $(".Annonce-Section").css("height", "auto");
-      $(".Annonce-Section").css("background", "none");
+      $(".Annonce-Section").css("background", "transparent");
 
       $("#main-content").hide();
       $("#main-content").css("display", "none");
       $(".CantiqueList-Section").hide();
       $(".Lecture-Section").hide();
-      $(".Copyright").show();
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
@@ -211,20 +196,14 @@ $(".Zik-Card, .Card").click(function(){
   $(".Lecture-Section").css("position", "absolute");
   $(".Lecture-Section").css("width", "0%");
   $(".Lecture-Section").css("height", "100dvh");
-  $(".Lecture-Section").css("background", "linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%)");
-
-  $(".Copyright").hide();
+  $(".Lecture-Section").css("background", "#1d1d1d");
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
   
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
-  $(".CantiqueList-Section").css("height", "100dvh");
-
   $("#main-content").css("z-index", "200");
-  $("#main-content").css("height", "100dvh");
-  
   $(".Annonce-Section").css("z-index", "200");
-  $(".Annonce-Section").css("height", "100dvh");
-  
+
   // En suite animer la section 
   setTimeout(function () {
     $(".Lecture-Section").css("z-index", "500");
@@ -235,13 +214,12 @@ $(".Zik-Card, .Card").click(function(){
     setTimeout(function () {
       $(".Lecture-Section").css("position", "relative");
       $(".Lecture-Section").css("height", "auto");
-      $(".Lecture-Section").css("background", "none");
+      $(".Lecture-Section").css("background", "transparent");
 
       $("#main-content").hide();
       $("#main-content").css("display", "none");
       $(".CantiqueList-Section").hide();
       $(".Annonce-Section").hide();
-      $(".Copyright").show();
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 

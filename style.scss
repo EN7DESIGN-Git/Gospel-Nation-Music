@@ -254,7 +254,7 @@ button:focus, a:focus, input:focus {
   position: relative;
   overflow: clip;
   transform-origin: bottom;
-  transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
   bottom: 0;
 }
 
@@ -415,11 +415,11 @@ button:focus, a:focus, input:focus {
   display: none;
   width: 100%;
   bottom: 0;
-  padding-top: 200px;
+  // padding-top: 200px;
   transform-origin: bottom;
   
   overflow: clip;
-  transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
 
   & h2{
@@ -580,7 +580,7 @@ button:focus, a:focus, input:focus {
 
   position: relative;
   overflow: clip;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
   & .Annonce-Wrapper {
       width: 297px;
@@ -648,7 +648,7 @@ button:focus, a:focus, input:focus {
 }
 
 /* -------------------------------------------------- */
-// Lecture page
+// Lecture Sectio
 .Lecture-Section{
   display: none;
   width: 0%;
@@ -658,7 +658,7 @@ button:focus, a:focus, input:focus {
 
   position: relative;
   overflow: clip;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
   // Lecture-Wrapper
   & .Lecture-Wrapper {
