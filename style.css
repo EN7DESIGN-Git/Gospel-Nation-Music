@@ -675,6 +675,19 @@ button:focus, a:focus, input:focus {
   font-weight: 600;
   text-decoration: none;
 }
+.Lecture-Section .Btn-ChordsLyric {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 18px;
+  gap: 10px;
+  border-radius: 10px;
+  background: var(--Primary, #CC9346);
+  border: none;
+  color: var(--Light);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
 
 /* -------------------------------------------------- */
 .Copyright {
