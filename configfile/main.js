@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 // ------------------------------
 
-// Clik Card
+// Clik Card home
 $(document).ready(function(){
   $(".Card").click(function(){
     const card = $(this);
@@ -81,6 +81,34 @@ $(document).ready(function(){
 
 //Transition des sections
 //-------------------------
+
+// ........................
+// Pour Home Section
+$(".Btn-Home").click(function(){
+  $("#main-content").css("display", "block"); 
+  $("#main-content").css("position", "absolute"); 
+  $("#main-content").css("height", "0"); 
+
+
+  // Reset z-index Autres sections
+  $(".CantiqueList-Section").css("z-index", "200");
+  $(".Annonce-Section").css("z-index", "200");
+
+  // En suite animer la section 
+  setTimeout(function () {
+    $("#main-content").css("z-index", "500");
+    $("#main-content").css("height", "100dvh");
+  }, 300); // Correspond au temps de l'animation CSS
+
+  // En suite reset la position des autres section et initialiser celle-ci
+  setTimeout(function () {
+    $("#main-content").css("position", "relative");
+    $("#main-content").css("height", ""); 
+
+    $(".CantiqueList-Section").hide();
+    $(".Annonce-Section").hide();
+  }, 700);
+});
 
 //Pour Cantique List Section
 $(".Btn-Lyrics").click(function(){
@@ -104,8 +132,9 @@ $(".Btn-Lyrics").click(function(){
   // En suite reset la position des autres section et initialiser celle-ci
   setTimeout(function () {
     $(".CantiqueList-Section").css("position", "");
-    $(".CantiqueList-Section").css("height", "100svh"); 
-    $(".CantiqueList-Section").css("padding", "180px 0px");
+    $(".CantiqueList-Section").css("height", ""); 
+    $(".CantiqueList-Section").css("background", "none"); 
+    $(".CantiqueList-Section").css("padding-top", "200px");
 
     $(".CantiqueList-Wrapper").fadeIn();
     $(".Search-Wrapper").fadeIn();
@@ -144,33 +173,6 @@ $(".Btn-Annonce").click(function(){
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
-// ........................
-// Pour Home Section
-$(".Btn-Home").click(function(){
-  $("#main-content").css("display", "block"); 
-  $("#main-content").css("position", "absolute"); 
-  $("#main-content").css("height", "0"); 
-
-
-  // Reset z-index Autres sections
-  $(".CantiqueList-Section").css("z-index", "200");
-  $(".Annonce-Section").css("z-index", "200");
-
-  // En suite animer la section 
-  setTimeout(function () {
-    $("#main-content").css("z-index", "500");
-    $("#main-content").css("height", "100dvh");
-  }, 300); // Correspond au temps de l'animation CSS
-
-  // En suite reset la position des autres section et initialiser celle-ci
-  setTimeout(function () {
-    $("#main-content").css("position", "relative");
-    $("#main-content").css("height", "auto"); 
-
-    $(".CantiqueList-Section").hide();
-    $(".Annonce-Section").hide();
-  }, 700);
-});
 
 // ........................
 // Click bouton search
@@ -187,44 +189,73 @@ $(document).ready(function(){
 $(document).ready(function () {
   $('.search-input').on('input', function () {
     const query = $(this).val().toLowerCase(); // Récupère la valeur saisie (en minuscule)
-    $('.CantiqueList-Section .Zik-Card').each(function () {
-      const title = $(this).find('.Zik-Card_Title').text().toLowerCase(); // Récupère le texte du titre
-      const author = $(this).find('.Zik-Card_Auteur').text().toLowerCase(); // Récupère le texte de l'auteur
-      // Vérifie si le texte saisi correspond au titre ou à l'auteur
-      if (title.includes(query) || author.includes(query)) {
-        $(this).show(); // Affiche la carte si correspondance
-      } else {
-        $(this).hide(); // Cache sinon
-      }
-    });
+
+    if (query.trim() === '') {
+      // Si la recherche est vide, réinitialise l'état initial
+      $('.Adoration').hide(); // Masque la section Adoration
+      $('.Louange').show();   // Affiche la section Louange
+      $('.Zik-Card').show();  // Affiche toutes les cartes
+    } else {
+      // Si une recherche est en cours
+      $('.Adoration').show(); // Affiche la section Adoration temporairement
+      $('.Louange').show();   // Affiche aussi la section Louange
+
+      $('.CantiqueList-Section .Zik-Card').each(function () {
+        const title = $(this).find('.Zik-Card_Title').text().toLowerCase(); // Récupère le texte du titre
+        const author = $(this).find('.Zik-Card_Auteur').text().toLowerCase(); // Récupère le texte de l'auteur
+
+        // Vérifie si le texte saisi correspond au titre ou à l'auteur
+        if (title.includes(query) || author.includes(query)) {
+          $(this).show(); // Affiche la carte si correspondance
+        } else {
+          $(this).hide(); // Cache sinon
+        }
+      });
+    }
   });
 });
 
+
 // ........................
 // Click Zik card
-$(document).ready(function () {
-  // Écoute le clic sur les cartes
-  $(".Zik-Card").on("click", function () {
-    // Supprime la classe 'Zik-Card-Click' de toutes les cartes
-    $(".Zik-Card").removeClass("Zik-Card-Click");
-    // Ajoute la classe 'Zik-Card-Click' uniquement à la carte cliquée
-    $(this).addClass("Zik-Card-Click");
+$(document).ready(function(){
+  $(".Zik-Card").click(function(){
+    const card = $(this);
+    card.addClass("Zik-Card-Click"); // Ajoute la classe pour réduire la taille
+    
+    // Retire la classe après un délai (1s pour correspondre à la transition)
+    setTimeout(() => {
+      card.removeClass("Zik-Card-Click");
+    }, 600);
   });
 });
 
 // ........................
 // Click Btn filter
 $(document).ready(function () {
-  // Écoute le clic sur les cartes
+  // Écoute le clic sur les boutons de filtre
   $(".Btn-filter").on("click", function () {
-    // Supprime la classe 'Zik-Card-Click' de toutes les cartes
+    // Supprime la classe 'Btn-filter_Active' de tous les boutons
     $(".Btn-filter").removeClass("Btn-filter_Active");
-    // Ajoute la classe 'Zik-Card-Click' uniquement à la carte cliquée
+    // Ajoute la classe 'Btn-filter_Active' uniquement au bouton cliqué
     $(this).addClass("Btn-filter_Active");
-    $(this).css("scale", "1.05");
 
+    // Ajouter l'effet scale au bouton cliqué
+    $(this).css("scale", "1.05");
     setTimeout(() => {
       $(this).css("scale", "1");
     }, 300);
+
+    // Gestion de l'affichage des sections
+    if ($(this).attr("id") === "Louange") {
+      // Affiche la section Louange et masque Adoration
+      $(".Louange").show();
+      $(".Adoration").hide();
+    } else if ($(this).attr("id") === "Adoration") {
+      // Affiche la section Adoration et masque Louange
+      $(".Adoration").css("display", "flex");
+      $(".Louange").hide();
+    }
   });
 });
+

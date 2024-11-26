@@ -251,13 +251,11 @@ button:focus, a:focus, input:focus {
 #main-content{
   display: block;
   width: 100%;
-  height: auto;
   position: relative;
   overflow: clip;
   transform-origin: bottom;
   transition: height 0.4s ease-in-out;
   bottom: 0;
-  background-color: var(--Black);
 }
 
 /* Hero Section */
@@ -411,27 +409,6 @@ button:focus, a:focus, input:focus {
   }
 }
 
-/* Copyright */
-.Copyright{
-  font-size: 0.75rem;
-  color: var(--Light);
-  opacity: 48%;
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 100px;
-
-  & Span{
-    font-size: 1.1rem;
-  }
-
-  /* Tablette */
-  @media(width >= 500px) {
-    padding-top: 140px;
-    padding-bottom: 140px;
-  }
-}
-
-
 /* -------------------------------------------------- */
 // Cnatique Liste Section
 .CantiqueList-Section{
@@ -547,45 +524,50 @@ button:focus, a:focus, input:focus {
   width: 334px;
   margin: 0 auto;
   margin-top: 52px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
 
-  // zik Card
-  & .Zik-Card{
+  // Grp
+  & .Grp{
+    width: 100%;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 50px;
-    width: -webkit-fill-available;
-    border-radius: 8px;
-    padding: 0px 16px;
-
-    color: var(--Light);
-
-    & .Zik-Card_Title{
-      font-size: 0.875rem;
-      font-weight: 700;
-    }
-
-    & .Zik-Card_Auteur{
-      font-size: 0.75rem;
-      font-weight: 100;
-      letter-spacing: 0.5px;
-    }
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  & .Zik-Card-Click{
-    background-color: rgba(255, 255, 255, 0.06);
-    transition: background-color 0.3s ease;
-    scale: 1.01;
+
+  // Grp Adoration masqué par defaut
+  & .Adoration{
+    display: none;
   }
 }
 
+// zik Card
+.Zik-Card{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  width: -webkit-fill-available;
+  border-radius: 8px;
+  padding: 0px 16px;
 
+  color: var(--Light);
 
+  & .Zik-Card_Title{
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
 
-
+  & .Zik-Card_Auteur{
+    font-size: 0.75rem;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+  }
+}
+.Zik-Card-Click{
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: background-color 0.3s ease;
+  scale: 1.01;
+}
 
 /* -------------------------------------------------- */
 // Annonce Section
@@ -600,4 +582,25 @@ button:focus, a:focus, input:focus {
   position: relative;
   overflow: clip;
   transition: width 0.4s ease-in-out;
+}
+
+/* -------------------------------------------------- */
+// Copyright
+.Copyright{
+  font-size: 0.75rem;
+  color: var(--Light);
+  opacity: 48%;
+  text-align: center;
+  padding-top: 118px;
+  padding-bottom: 100px;
+
+  & Span{
+    font-size: 1.1rem;
+  }
+
+  /* Tablette */
+  @media(width >= 500px) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
 }

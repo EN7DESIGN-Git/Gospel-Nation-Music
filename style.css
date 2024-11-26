@@ -240,13 +240,11 @@ button:focus, a:focus, input:focus {
 #main-content {
   display: block;
   width: 100%;
-  height: auto;
   position: relative;
   overflow: clip;
   transform-origin: bottom;
   transition: height 0.4s ease-in-out;
   bottom: 0;
-  background-color: var(--Black);
 }
 
 /* Hero Section */
@@ -396,26 +394,6 @@ button:focus, a:focus, input:focus {
   }
 }
 
-/* Copyright */
-.Copyright {
-  font-size: 0.75rem;
-  color: var(--Light);
-  opacity: 48%;
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 100px;
-  /* Tablette */
-}
-.Copyright Span {
-  font-size: 1.1rem;
-}
-@media (width >= 500px) {
-  .Copyright {
-    padding-top: 140px;
-    padding-bottom: 140px;
-  }
-}
-
 /* -------------------------------------------------- */
 .CantiqueList-Section {
   display: none;
@@ -515,12 +493,19 @@ button:focus, a:focus, input:focus {
   width: 334px;
   margin: 0 auto;
   margin-top: 52px;
+}
+.Zik-List_Wrapper .Grp {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 10px;
 }
-.Zik-List_Wrapper .Zik-Card {
+.Zik-List_Wrapper .Adoration {
+  display: none;
+}
+
+.Zik-Card {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -530,16 +515,17 @@ button:focus, a:focus, input:focus {
   padding: 0px 16px;
   color: var(--Light);
 }
-.Zik-List_Wrapper .Zik-Card .Zik-Card_Title {
+.Zik-Card .Zik-Card_Title {
   font-size: 0.875rem;
   font-weight: 700;
 }
-.Zik-List_Wrapper .Zik-Card .Zik-Card_Auteur {
+.Zik-Card .Zik-Card_Auteur {
   font-size: 0.75rem;
   font-weight: 100;
   letter-spacing: 0.5px;
 }
-.Zik-List_Wrapper .Zik-Card-Click {
+
+.Zik-Card-Click {
   background-color: rgba(255, 255, 255, 0.06);
   transition: background-color 0.3s ease;
   scale: 1.01;
@@ -556,4 +542,24 @@ button:focus, a:focus, input:focus {
   position: relative;
   overflow: clip;
   transition: width 0.4s ease-in-out;
+}
+
+/* -------------------------------------------------- */
+.Copyright {
+  font-size: 0.75rem;
+  color: var(--Light);
+  opacity: 48%;
+  text-align: center;
+  padding-top: 118px;
+  padding-bottom: 100px;
+  /* Tablette */
+}
+.Copyright Span {
+  font-size: 1.1rem;
+}
+@media (width >= 500px) {
+  .Copyright {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
 }/*# sourceMappingURL=style.css.map */

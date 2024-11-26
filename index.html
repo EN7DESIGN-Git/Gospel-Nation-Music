@@ -20,7 +20,7 @@
         <div id="lottie-animation"></div>
         <dotlottie-wc id="lottie-animation" src="./icons/Cercle-Loader.lottie" autoplay loop></dotlottie-wc>  
     </div>
-
+    <!-- ................................................................. -->
     <!-- NavBar -->
     <div class="NavBar">
       <button href="#" class="Btn-Lyrics">
@@ -47,16 +47,17 @@
           <img class="Header-Logo" src="./images/Logo.png" alt="" loading="lazy">
         </a>
     </div>
+    <!-- ................................................................. -->
 
     <!-- Page d'accueil (contenu principal) -->
     <section id="main-content">
       <!-- Hero section -->
        <div class="Hero-Section">
-        <div class="Title-Grp">
-          <p class="Title_P1">Louez l'Éternel,</p>
-          <p class="Title_P2">vous toutes les nations, célébrez-le, vous tous les peuples !</p>
-          <p class="Title_P3">Psaume 117:1</p>
-        </div>
+          <div class="Title-Grp">
+            <p class="Title_P1">Louez l'Éternel,</p>
+            <p class="Title_P2">vous toutes les nations, célébrez-le, vous tous les peuples !</p>
+            <p class="Title_P3">Psaume 117:1</p>
+          </div>
        </div>
 
       <!-- Top6 Section -->
@@ -118,11 +119,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Copyright -->
-       <p class="Copyright">
-        <span>©️</span> Copyright 2024 by EN7DESIGN
-      </p>
     </section>
 
     <!-- Cantique Liste page -->
@@ -140,33 +136,100 @@
         <h2>Retrouvez toute la liste des<br>chansons et lyrics disponible</h2>
         <!-- Btn filter -->
         <div class="Btn-filterGrp">
-        <button class="Btn-filter Btn-filter_Active">Louange</button>
-        <button class="Btn-filter">Adoration</button>
+          <button class="Btn-filter Btn-filter_Active" id="Louange">Louange</button>
+          <button class="Btn-filter" id="Adoration">Adoration</button>
         </div>
       </div>
+
       <!-- Cantique List -->
       <div class="CantiqueList-Wrapper">
         <!-- Zik-List_Wrapper -->
         <div class="Zik-List_Wrapper">
-          <!-- Card -->
-          <div class="Zik-Card">
-          <div class="Zik-Card_icon">
-            <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+          <!-- Louange -->
+          <div class="Grp Louange">
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">01 | Sepela</p>
+                <p class="Zik-Card_Auteur">JowB et Hope Kinshasa</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">02 | Yaweh</p>
+                <p class="Zik-Card_Auteur">Samuel Olivier</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">03 | Nzambe monene</p>
+                <p class="Zik-Card_Auteur">Dena Mwana</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">04 | Nkembo na yo</p>
+                <p class="Zik-Card_Auteur">JowB Hope Kinshasa</p>
+              </div>
+            </div>
           </div>
-          <div class="Zik-Card_TitleGrp">
-            <p class="Zik-Card_Title">01| Sepela</p>
-            <p class="Zik-Card_Auteur">JowB et Hope Kinshasa</p>
-          </div>
-          </div>
-    
-          <div class="Zik-Card">
-          <div class="Zik-Card_icon">
-            <img src="./icons/zik-icon.svg" alt="" loading="lazy">
-          </div>
-          <div class="Zik-Card_TitleGrp">
-            <p class="Zik-Card_Title">02| Yaweh</p>
-            <p class="Zik-Card_Auteur">Samuel Olivier</p>
-          </div>
+          <!-- Adoration -->
+          <div class="Grp Adoration">
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">05 | I surrender all</p>
+                <p class="Zik-Card_Auteur">William MCdowell</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">06 | Plus de toi encore</p>
+                <p class="Zik-Card_Auteur">JowB Hope Kinshasa</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">07 | Have it all</p>
+                <p class="Zik-Card_Auteur">Worshipmob Jesusco</p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="Zik-Card">
+              <div class="Zik-Card_icon">
+                <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="Zik-Card_TitleGrp">
+                <p class="Zik-Card_Title">08 | Lifting high </p>
+                <p class="Zik-Card_Auteur">Worshipmob Jesusco</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -177,7 +240,12 @@
       <div style="height:300px; background-color:yellow; margin-bottom: 50px;"></div>
       <div style="height:300px; background-color:rgb(0, 208, 255)"></div>
     </section>
-      
+    
+    <!-- Copyright -->
+    <p class="Copyright">
+      <span>©️</span> Copyright 2024 by EN7DESIGN
+    </p>
+
   </body>
   <script src="./configfile/main.js"></script>
   <!-- <script src="./configfile/script.js"></script> -->
