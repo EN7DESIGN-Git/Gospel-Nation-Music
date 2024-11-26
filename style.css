@@ -686,7 +686,7 @@ button:focus, a:focus, input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 18px;
+  padding: 8px 30px;
   gap: 10px;
   border-radius: 10px;
   background: var(--Primary, #CC9346);
