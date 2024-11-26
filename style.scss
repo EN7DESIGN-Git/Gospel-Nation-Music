@@ -668,6 +668,7 @@ button:focus, a:focus, input:focus {
     align-items: center;
     gap: 50px;
     padding-top: 180px;
+    padding-bottom: 10px;
     margin: 0 auto;
   }
   // Lyrics-Wrapper
@@ -759,6 +760,7 @@ button:focus, a:focus, input:focus {
     border-radius: 10px;
     background: var(--Primary, #CC9346);
     border: none;
+    scale: 1;
 
     color: var(--Light);
     font-size: 0.75rem;
