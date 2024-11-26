@@ -337,18 +337,5 @@ $(document).ready(function () {
 // });
 
 
-$(document).ready(function () {
-  $('.Btn-ZikDownload').on('click', function (e) {
-    e.preventDefault(); // Empêche l'action par défaut
-    const link = $('<a>') // Crée dynamiquement un élément <a>
-      .attr('href', $(this).attr('href')) // Définit l'URL du fichier audio
-      .attr('download', 'MonAudio.mp3') // Ajoute l'attribut download
-      .appendTo('body'); // Ajoute l'élément au body
-
-    link[0].click(); // Simule un clic sur le lien
-    link.remove(); // Supprime l'élément après le clic
-  });
-});
-
 
 
