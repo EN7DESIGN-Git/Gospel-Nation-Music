@@ -397,9 +397,9 @@ button:focus, a:focus, input:focus {
 /* -------------------------------------------------- */
 .CantiqueList-Section {
   display: none;
-  background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
   width: 100%;
   bottom: 0;
+  padding-top: 200px;
   transform-origin: bottom;
   overflow: clip;
   transition: height 0.4s ease-in-out;
@@ -488,20 +488,19 @@ button:focus, a:focus, input:focus {
 .CantiqueList-Wrapper {
   margin-top: 220px;
 }
-
-.Zik-List_Wrapper {
+.CantiqueList-Wrapper .Zik-List_Wrapper {
   width: 334px;
   margin: 0 auto;
   margin-top: 52px;
 }
-.Zik-List_Wrapper .Grp {
+.CantiqueList-Wrapper .Zik-List_Wrapper .Grp {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
-.Zik-List_Wrapper .Adoration {
+.CantiqueList-Wrapper .Zik-List_Wrapper .Adoration {
   display: none;
 }
 

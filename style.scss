@@ -413,9 +413,9 @@ button:focus, a:focus, input:focus {
 // Cnatique Liste Section
 .CantiqueList-Section{
   display: none;
-  background: linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%);
   width: 100%;
   bottom: 0;
+  padding-top: 200px;
   transform-origin: bottom;
   
   overflow: clip;
@@ -517,28 +517,28 @@ button:focus, a:focus, input:focus {
 // CantiqueList Wrapper
 .CantiqueList-Wrapper{
   margin-top: 220px;
+  // Zik-List_Wrapper
+  & .Zik-List_Wrapper{
+    width: 334px;
+    margin: 0 auto;
+    margin-top: 52px;
+  
+    // Grp
+    & .Grp{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    // Grp Adoration masqué par defaut
+    & .Adoration{
+      display: none;
+    }
+  }
 }
 
-// Zik-List_Wrapper
-.Zik-List_Wrapper{
-  width: 334px;
-  margin: 0 auto;
-  margin-top: 52px;
-
-  // Grp
-  & .Grp{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  // Grp Adoration masqué par defaut
-  & .Adoration{
-    display: none;
-  }
-}
 
 // zik Card
 .Zik-Card{
