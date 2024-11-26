@@ -164,12 +164,16 @@ $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("position", "absolute");
   $(".Annonce-Section").css("width", "0%");
   $(".Annonce-Section").css("height", "100dvh");
+  $(".Annonce-Section").css("background", "linear-gradient(180deg, #2E2E2E 0%, #1C1C1C 100%)");
 
   $(".Copyright").hide();
   
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
+  $(".CantiqueList-Section").css("height", "100dvh");
+
   $("#main-content").css("z-index", "200");
+  $("#main-content").css("height", "100dvh");
   
   // En suite animer la section 
   setTimeout(function () {
@@ -181,6 +185,7 @@ $(".Btn-Annonce").click(function(){
     setTimeout(function () {
       $(".Annonce-Section").css("position", "relative");
       $(".Annonce-Section").css("height", "auto");
+      $(".Annonce-Section").css("background", "none");
 
       $("#main-content").hide();
       $("#main-content").css("display", "none");
@@ -274,4 +279,61 @@ $(document).ready(function () {
     }
   });
 });
+
+// ........................
+// Click Btn play video
+$(document).ready(function () {
+  const $video = $("#my-video");
+  const $playButton = $("#play-button");
+  const $pauseButton = $("#pause-button");
+
+  // Fonction pour afficher les contrôles
+  function showControls() {
+    $video.attr("controls", true); // Ajouter l'attribut controls
+  }
+
+  // Fonction pour masquer les contrôles
+  function hideControls() {
+    $video.removeAttr("controls"); // Retirer l'attribut controls
+  }
+
+  // Lecture via le bouton play
+  $playButton.on("click", function () {
+    $video[0].play(); // Démarrer la vidéo
+    $playButton.addClass("VidBtn-hidden"); // Cacher le bouton play
+    showControls(); // Afficher les contrôles
+  });
+
+  // Lecture via le bouton pause
+  $pauseButton.on("click", function () {
+    $video[0].play(); // Reprendre la lecture
+    $playButton.addClass("VidBtn-hidden"); // Cacher le bouton play
+    $pauseButton.addClass("VidBtn-hidden"); // Cacher le bouton pause
+    showControls(); // Afficher les contrôles
+  });
+
+  // Lecture/Pause via clic sur la vidéo
+  $video.on("click", function () {
+    if ($video[0].paused) {
+      $video[0].play(); // Lecture
+      $playButton.addClass("VidBtn-hidden");
+      $pauseButton.addClass("VidBtn-hidden");
+      showControls(); // Afficher les contrôles
+    } else {
+      $video[0].pause(); // Pause
+      $pauseButton.removeClass("VidBtn-hidden");
+      $playButton.addClass("VidBtn-hidden");
+      hideControls(); // Masquer les contrôles
+    }
+  });
+
+  // Gestion de la fin de la vidéo
+  $video.on("ended", function () {
+    $playButton.removeClass("VidBtn-hidden"); // Réafficher le bouton play
+    $pauseButton.addClass("VidBtn-hidden"); // Cacher le bouton pause
+    hideControls(); // Masquer les contrôles
+  });
+});
+
+
 
