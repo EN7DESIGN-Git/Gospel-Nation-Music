@@ -718,6 +718,11 @@ button:focus, a:focus, input:focus {
     justify-content: center;
     align-items: center;
     gap: 18px;
+
+    & audio{
+      width: 300px;
+      height: 44px;
+    }
   }
 }
 
