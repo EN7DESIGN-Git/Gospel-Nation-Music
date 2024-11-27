@@ -90,6 +90,14 @@ $(".Btn-Home").click(function(){
   $("#main-content").css("height", "0");
   $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
 
+  // Effacer la recherche
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche
+  $('.Adoration').hide(); // Masque la section Adoration
+  $('.Louange').show();   // Affiche la section Louange
+  $('.Zik-Card').show();  // Affiche toutes les cartes
+  $(".Btn-filter").removeClass("Btn-filter_Active");
+  $("#Louange").addClass("Btn-filter_Active");
+
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
   $(".Annonce-Section").css("z-index", "200");
@@ -122,7 +130,16 @@ $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("padding-top", "0");
   $(".CantiqueList-Section").css("padding", "0");
   $(".CantiqueList-Section").css("background", "#1d1d1d");
-  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche 
+  
+  // Effacer la recherche
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche
+  $('.Adoration').hide(); // Masque la section Adoration
+  $('.Louange').show();   // Affiche la section Louange
+  $('.Zik-Card').show();  // Affiche toutes les cartes
+  $(".Btn-filter").removeClass("Btn-filter_Active");
+  $("#Louange").addClass("Btn-filter_Active");
 
   $(".CantiqueList-Wrapper").hide();
   $(".Search-Wrapper").hide();
@@ -163,7 +180,16 @@ $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("width", "0%");
   $(".Annonce-Section").css("height", "100dvh");
   $(".Annonce-Section").css("background", "#1d1d1d");
-  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche 
+
+  // Effacer la recherche
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche
+  $('.Adoration').hide(); // Masque la section Adoration
+  $('.Louange').show();   // Affiche la section Louange
+  $('.Zik-Card').show();  // Affiche toutes les cartes
+  $(".Btn-filter").removeClass("Btn-filter_Active");
+  $("#Louange").addClass("Btn-filter_Active");
   
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
@@ -197,8 +223,17 @@ $(".Zik-Card, .Card").click(function(){
   $(".Lecture-Section").css("width", "0%");
   $(".Lecture-Section").css("height", "100dvh");
   $(".Lecture-Section").css("background", "#1d1d1d");
-  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
+  $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche 
   
+  // Effacer la recherche
+  $(".search-input").val(''); // Efface le texte dans la barre de recherche
+  $('.Adoration').hide(); // Masque la section Adoration
+  $('.Louange').show();   // Affiche la section Louange
+  $('.Zik-Card').show();  // Affiche toutes les cartes
+  $(".Btn-filter").removeClass("Btn-filter_Active");
+  $("#Louange").addClass("Btn-filter_Active");
+
   // Reset z-index Autres sections
   $(".CantiqueList-Section").css("z-index", "200");
   $("#main-content").css("z-index", "200");
@@ -244,10 +279,16 @@ $(document).ready(function () {
       $('.Adoration').hide(); // Masque la section Adoration
       $('.Louange').show();   // Affiche la section Louange
       $('.Zik-Card').show();  // Affiche toutes les cartes
+      
+      // Reinitialise le height de la section
+      $(".CantiqueList-Section").css("height", "");
     } else {
       // Si une recherche est en cours
       $('.Adoration').show(); // Affiche la section Adoration temporairement
       $('.Louange').show();   // Affiche aussi la section Louange
+
+      // Ajouter le height sur la section
+      $(".CantiqueList-Section").css("height", "100dvh");
 
       $('.CantiqueList-Section .Zik-Card').each(function () {
         const title = $(this).find('.Zik-Card_Title').text().toLowerCase(); // Récupère le texte du titre
