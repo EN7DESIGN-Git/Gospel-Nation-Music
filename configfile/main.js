@@ -82,13 +82,16 @@ $(document).ready(function(){
 //Transition des sections
 //-------------------------
 
-// ........................
 // Pour Home Section
 $(".Btn-Home").click(function(){
   $("#main-content").css("display", "block"); 
   $("#main-content").css("position", "fixed"); 
   $("#main-content").css("height", "0");
   $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement 
+
+  // Resete elements de la section lecture
+  $("#ChordsLyric").css("display", "none");
+  $(".Lyrics-Wrapper").css("display", "block");
 
   // Effacer la recherche
   $(".search-input").val(''); // Efface le texte dans la barre de recherche
@@ -132,6 +135,10 @@ $(".Btn-Lyrics").click(function(){
   $(".CantiqueList-Section").css("background", "#1d1d1d");
   $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
   $(".search-input").val(''); // Efface le texte dans la barre de recherche 
+
+  // Resete elements de la section lecture
+  $("#ChordsLyric").css("display", "none");
+  $(".Lyrics-Wrapper").css("display", "block");
   
   // Effacer la recherche
   $(".search-input").val(''); // Efface le texte dans la barre de recherche
@@ -172,7 +179,6 @@ $(".Btn-Lyrics").click(function(){
   }, 700); // Correspond au temps de l'animation CSS
 });
 
-// ........................
 // Pour Annonce Section
 $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("display", "block");
@@ -182,6 +188,10 @@ $(".Btn-Annonce").click(function(){
   $(".Annonce-Section").css("background", "#1d1d1d");
   $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
   $(".search-input").val(''); // Efface le texte dans la barre de recherche 
+
+  // Resete elements de la section lecture
+  $("#ChordsLyric").css("display", "none");
+  $(".Lyrics-Wrapper").css("display", "block");
 
   // Effacer la recherche
   $(".search-input").val(''); // Efface le texte dans la barre de recherche
@@ -215,7 +225,6 @@ $(".Btn-Annonce").click(function(){
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
-// ........................
 // Pour Lecture Section
 $(".Zik-Card, .Card").click(function(){
   $(".Lecture-Section").css("display", "block");
@@ -225,6 +234,10 @@ $(".Zik-Card, .Card").click(function(){
   $(".Lecture-Section").css("background", "#1d1d1d");
   $('html, body').animate({ scrollTop: 0 }, 1000); // Scroll vers le haut rapidement
   $(".search-input").val(''); // Efface le texte dans la barre de recherche 
+
+  // Resete elements de la section lecture
+  $("#ChordsLyric").css("display", "none");
+  $(".Lyrics-Wrapper").css("display", "block");
   
   // Effacer la recherche
   $(".search-input").val(''); // Efface le texte dans la barre de recherche
@@ -258,7 +271,8 @@ $(".Zik-Card, .Card").click(function(){
     }, 700); // Correspond au temps de l'animation CSS (800ms)
 });
 
-// ........................
+
+// ...........................................................
 // Click bouton search
 $(document).ready(function(){
   $(".search-button").click(function(){
@@ -356,9 +370,44 @@ $(document).ready(function(){
     var button = $(".Btn-ChordsLyric");
     button.animate({scale: '1.1'}, "300");
     button.animate({scale: '1'}, "300");
+
+    // Afficher l'image
+    $("#ChordsLyric").css("display", "block");
+    $(".Lyrics-Wrapper").css("display", "none");
   });
+
 });
 
+// ........................
+// Dynamisme des donne avec la page BDDLyrics
+$(document).ready(function () {
+  // Lorsqu'une card est cliquée
+  $(".Zik-Card, .Card").on("click", function () {
+    const lyricId = $(this).data("id"); // Récupérer l'ID de la card
+
+    // Charger dynamiquement le contenu de la page BDDLyrics.html
+    $.get("./BDDLyrics.html", function (data) {
+      const $html = $("<div>").html(data); // Charger la page entière dans un conteneur
+      const $lyricDiv = $html.find(`#${lyricId}`); // Trouver la div correspondant à l'ID
+
+      if ($lyricDiv.length > 0) {
+        // Mettre à jour le contenu de la section Lecture
+        $("#ZikTitle").text($lyricDiv.find("#ZikTitle").text());
+        $("#ZikAuteur").text($lyricDiv.find("#ZikAuteur").text());
+        $("#LyricText").html($lyricDiv.find("#LyricText").html());
+        $("#AudioSource").attr("src", $lyricDiv.find("audio source").attr("src"));
+        $("#Btn-ZikDownload").attr("href", $lyricDiv.find("audio source").attr("src"));
+        $("#ChordsLyric").attr("src", $lyricDiv.find("#ChordsLyric").attr("src"));
+
+        // Recharger l'audio (important pour certains navigateurs)
+        $("audio")[0].load();
+
+      } else {
+        alert("Les données pour cette chanson ne sont pas disponibles.");
+      }
+    });
+  });
+});
 
 
 

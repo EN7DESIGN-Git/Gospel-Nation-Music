@@ -68,7 +68,7 @@
               <h2>Na mikabi</h2>
             </div>
 
-            <div class="Card">
+            <div class="Card" data-id="01Sepela">
               <h2>Sepela</h2>
             </div>
 
@@ -152,7 +152,7 @@
           <!-- Louange -->
           <div class="Grp Louange">
             <!-- Card -->
-            <div class="Zik-Card">
+            <div class="Zik-Card" data-id="01Sepela">
               <div class="Zik-Card_icon">
                 <img src="./icons/zik-icon.svg" alt="" loading="lazy">
               </div>
@@ -237,6 +237,7 @@
           </div>
         </div>
       </div>
+
       <!-- Copyright -->
       <p class="Copyright">
         <span>©️</span> Copyright 2024 by EN7DESIGN
@@ -312,61 +313,42 @@
     <!-- Lecture page -->
      <section class="Lecture-Section">
         <div class="Lecture-Wrapper">
+          <!-- Chords Lyrics -->
+          <img id="ChordsLyric" src="" alt="" style="display: none;">
+
           <!-- Lyrics wrapper -->
           <div class="Lyrics-Wrapper">
             <div class="Lyrics_TitleGrp">
               <img src="./icons/zik-icon.svg" alt="" loading="lazy">
+
               <div class="TitlesBloc">
-                <p id="ZikTitle">01 | Sepela</p>
-                <p id="ZikAuteur">JowB Hope Kinshasa</p>
+                <p id="ZikTitle"></p>
+                <p id="ZikAuteur"></p>
               </div>
             </div>
-        
-            <p id="LyricText">
-              <b>COUPLET</b>
-              <br><br>
-              Atiki kembo nionso na lola<br>
-              Aye ko mipesa po na nga<br>
-              Bolingo na ye eleki nionso<br>
-              Natatoli ya ngo<br>
-              oh oh!<br>
-
-              <br><br>
-              <b>REFRAINS</b>
-              <br><br>
-              Motema, eh! motema<br>
-              Sepela, eh! sepela<br>
-              Motema, eh! motema<br>
-              Akotika yo te aza na yo<br>
-              
-              <br><br>
-              <b>PONT</b>
-              <br><br>
-              Na pesi ye nionso<br>
-              oh oh, oh oh!<br>
-              Na pesi ye nionso<br>
-              oh!<br>
+            <!-- Texte -->
+            <p id="LyricText"> 
             </p>
           </div>
         
           <!-- Fichier Audio -->
           <div class="Audio-Container">
             <audio controls>
-              <source src="./Audio/SEPELA-Jow B.mp3" type="audio/mpeg">
+              <source id="AudioSource" src="" type="audio/mpeg">
               Votre navigateur ne supporte pas le format audio.
             </audio>
 
-            <a class="Btn-ZikDownload" href="./Audio/SEPELA-Jow B.mp3" download="Sepela-JowB">
+            <a id="Btn-ZikDownload" class="Btn-ZikDownload" href="" download>
               <img src="./icons/Download-Icon.svg" alt="" loading="lazy">
               <p>Télécharger l’audio</p>
             </a>
           </div>
+
           <!-- Btn chords Lyrics -->
           <button class="Btn-ChordsLyric">
             <img src="./icons/Lyrics-Icon-white.svg" alt="" loading="lazy">
             <p>Chords lyric</p>
           </button>
-          <img id="ChordsLyric" src="./images/01Sepela-ChordsLyrics.png" alt="">
         </div>
         <!-- Copyright -->
         <p class="Copyright">
